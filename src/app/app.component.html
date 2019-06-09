@@ -1,29 +1,6 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<h4>NgSwitch</h4>
-<ul *ngFor="let person of people"
-    [ngSwitch]="person.country"> 
+<div id="map" class="map" ></div>
+<div id="popup" class="ol-popup" #popup>
+    <a href="#" id="popup-closer" class="ol-popup-closer" (click)="closeOnClick()" #close style="cursor: pointer"></a>
 
-  <li *ngSwitchCase="'UK'" 
-      class="text-success">{{ person.name }} ({{ person.country }})
-  </li>
-  <li *ngSwitchCase="'USA'"
-      class="text-primary">{{ person.name }} ({{ person.country }})
-  </li>
-  <li *ngSwitchCase="'HK'"
-      class="text-danger">{{ person.name }} ({{ person.country }})
-  </li>
-  <li *ngSwitchDefault 
-      class="text-warning">{{ person.name }} ({{ person.country }})
-  </li>
-</ul>`
-
-<p ng-switch on="(role == 'wrong') || (operation == 'READ')">
-  <span ng-switch-when="true">
-      Wrong
-  </span>
-  <span ng-switch-default>
-     Correct
-  </span>
-</p>
-
-<router-outlet></router-outlet>
+    <div id="popup-content" #popupcontent></div>
+</div>

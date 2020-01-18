@@ -10,12 +10,12 @@ import {fromLonLat} from "ol/proj";
 import {Feature}  from "ol";
 import Overlay from 'ol/Overlay';
 import {Icon, Style} from 'ol/style';
-import { ServicesService } from './services.service';
 import { Circle } from 'ol/geom';
 import { LineString } from 'ol/geom';
 import { Polygon } from 'ol/geom';
 
 import { Text, Stroke } from "ol/style";
+import { ElementRef, OnInit, ViewChild, Component } from '@angular/core';
 
 
 @Component({
@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
           ];
 
 
-  constructor(public services: ServicesService, private elementRef:ElementRef){
+  constructor(private elementRef:ElementRef){
   }
 
   ngOnInit(): void {
@@ -79,7 +79,6 @@ export class AppComponent implements OnInit {
     this.map = new olMap({
       target: 'map',
       layers: [
-        //osmLayer,
         xyzLayer,
         this.layer
       ],
